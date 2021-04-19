@@ -3,7 +3,12 @@
   "description": "快传",
   "author": "郑晓峰",
   "main": "index.html",
+  "preload": "preload.js",
   "version": "0.0.1",
+  "development": {
+    "main": "http://localhost:8080/index.html",
+    "preload": "preload.js"
+  },
   "logo": "logo.png",
   "features": [
     {
