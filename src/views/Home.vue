@@ -17,9 +17,21 @@ export default {
   },
   methods: {
     click() {
-      // window.utools.showNotification("Hi, uTools");
-      let ftp_client = new window.ftp("", "", "", "");
-      ftp_client.connect();
+      // let ftp_client = new window.FtpClient();
+      this.$ftp.connect({
+        host: "172.31.233.39",
+        port: 21,
+        user: "zeno",
+        password: "zxf0202",
+      });
+      this.$ftp.on("ready", () => {
+        window.utools.showNotification("FTP服务器连接成功");
+
+        this.$ftp.end();
+      });
+      this.$ftp.on("error", () => {
+        window.utools.showNotification("FTP服务器连接失败");
+      });
     },
   },
 };
