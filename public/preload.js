@@ -2,8 +2,6 @@
 
 const sftp = require("ssh2-sftp-client");
 
-// class SftpCl
-
 // window.FtpClient = FtpClient;
 let sftp_client = new sftp();
 
@@ -16,6 +14,7 @@ sftp_client
   })
   .then(() => {
     console.log("连接成功");
+    sftp_client.end();
   })
   .catch((err) => {
     console.log("连接失败");
