@@ -18,16 +18,14 @@ export default {
   methods: {
     click() {
       // let ftp_client = new window.FtpClient();
-      this.$ftp.connect({
-        host: "172.31.233.39",
-        port: 21,
-        user: "zeno",
-        password: "zxf0202",
-      });
       this.$ftp.on("ready", () => {
+        this.$ftp.connect({
+          host: "172.31.233.39",
+          port: 21,
+          user: "zeno",
+          password: "zxf0202",
+        });
         window.utools.showNotification("FTP服务器连接成功");
-
-        this.$ftp.end();
       });
       this.$ftp.on("error", () => {
         window.utools.showNotification("FTP服务器连接失败");
