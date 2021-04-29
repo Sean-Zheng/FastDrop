@@ -2,8 +2,9 @@
 
 const sftp = require("ssh2-sftp-client");
 
-// window.FtpClient = FtpClient;
+// class SftpCl
 
+// window.FtpClient = FtpClient;
 let sftp_client = new sftp();
 
 sftp_client
